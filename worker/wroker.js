@@ -1,6 +1,7 @@
 const { getChannel } = require('../config/rabbitmq');
 
-const startWorker = async (userId) => {
+// Start consuming the request based on userId
+const startWorker = async () => {
   const channel = getChannel();
   const queueName = `queue_${userId}`;
   await channel.assertQueue(queueName, { durable: false });

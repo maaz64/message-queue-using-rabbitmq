@@ -1,7 +1,9 @@
 const amqp = require('amqplib');
 
+// Defining channel
 let channel;
 
+// creating connection with RabbitMQ server
 const connectRabbitMQ = async () => {
   try {
     const connection = await amqp.connect('amqp://localhost');
